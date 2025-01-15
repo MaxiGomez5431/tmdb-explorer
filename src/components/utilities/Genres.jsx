@@ -24,7 +24,7 @@ export default function Genres ({genreIds, ...props}) {
       {
         genreArray && genreIds &&
 
-        <div {...props} className="flex items-center">
+        <div {...props} className="flex justify-center items-center">
           {
             genreArray.map((genre, index) => (
               <React.Fragment key={genre}>

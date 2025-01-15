@@ -4,7 +4,7 @@ import Home from "./components/UI/Home/Home";
 
 function App() {
   return (
-    <main className="h-screen w-screen flex flex-col">
+    <main className="h-screen flex flex-col">
 
       <BrowserRouter>
       
@@ -12,6 +12,7 @@ function App() {
         
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/logo/:id" element={<div>Hola</div>} />
           </Routes>
         
       </BrowserRouter>

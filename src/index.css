@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mediaScrollBar {
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+.mediaScrollBar::-webkit-scrollbar {
+  display: none; 
+}

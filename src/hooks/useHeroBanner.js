@@ -1,18 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { API_ENDPOINTS } from "../assets/apiConfig";
 
-function useHeroBanner({data, timeoutRef }) {
+function useHeroBanner({data}) {
   const [selectedMovie, setSelectedMovie] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const changeMovieWithAnimation = (next = true) => {
     if (isAnimating) return;
 
     setIsAnimating(true);
     changeMovie(next); 
-    resetTimer();  
-
     setTimeout(() => {
       setIsAnimating(false);
     }, 700);
@@ -26,52 +23,44 @@ function useHeroBanner({data, timeoutRef }) {
     );
   };
 
-  const resetTimer = () => {
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
-      changeMovie();
-    }, 10000);
-  };
-
   useEffect(() => {
     if (data) {
-      resetTimer();
-      console.log(data)
+      console.log(data);
     }
-
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
-
-  }, [data, selectedMovie]);
+  }, [data]);
 
   //se puede poner en otro hook para simplificar este
 
   useEffect(() => {
     if (!data || !data.results) return;
   
-    setIsImageLoaded(false); 
+    // Precarga de imágenes de fondo
+    const previousBackdropImg = new Image();
+    const currentBackdropImg = new Image();
+    const nextBackdropImg = new Image();
   
-    const previousImg = new Image();
-    const currentImg = new Image();
-    const nextImg = new Image();
-    
+    // Precarga de imágenes de póster
+    const previousPosterImg = new Image();
+    const currentPosterImg = new Image();
+    const nextPosterImg = new Image();
+  
     const prevIndex = selectedMovie > 0 ? selectedMovie - 1 : data.results.length - 1;
     const nextIndex = selectedMovie < data.results.length - 1 ? selectedMovie + 1 : 0;
   
-    
-    previousImg.src = `${API_ENDPOINTS.IMAGE_BACKDROP}${data.results[prevIndex]?.backdrop_path}`;
-    nextImg.src = `${API_ENDPOINTS.IMAGE_BACKDROP}${data.results[nextIndex]?.backdrop_path}`;
-    currentImg.src = `${API_ENDPOINTS.IMAGE_BACKDROP}${data.results[selectedMovie]?.backdrop_path}`;
-    
-    currentImg.onload = () => {
-      setIsImageLoaded(true);
-    };
+    // Precargar imágenes de fondo
+    previousBackdropImg.src = `${API_ENDPOINTS.IMAGE_BACKDROP}${data.results[prevIndex]?.backdrop_path}`;
+    currentBackdropImg.src = `${API_ENDPOINTS.IMAGE_BACKDROP}${data.results[selectedMovie]?.backdrop_path}`;
+    nextBackdropImg.src = `${API_ENDPOINTS.IMAGE_BACKDROP}${data.results[nextIndex]?.backdrop_path}`;
+  
+    // Precargar imágenes de póster
+    previousPosterImg.src = `${API_ENDPOINTS.IMAGE_POSTER}${data.results[prevIndex]?.poster_path}`;
+    currentPosterImg.src = `${API_ENDPOINTS.IMAGE_POSTER}${data.results[selectedMovie]?.poster_path}`;
+    nextPosterImg.src = `${API_ENDPOINTS.IMAGE_POSTER}${data.results[nextIndex]?.poster_path}`;
   
   }, [selectedMovie, data]);
   
 
-  return {changeMovieWithAnimation, resetTimer, selectedMovie, isImageLoaded};
+  return {changeMovieWithAnimation, selectedMovie, setSelectedMovie, isAnimating, setIsAnimating};
 }
 
 export default useHeroBanner;
