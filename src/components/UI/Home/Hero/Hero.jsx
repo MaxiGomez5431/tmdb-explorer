@@ -4,6 +4,7 @@ import useFetch from "../../../../hooks/useFetch"
 import useHeroBanner from "../../../../hooks/useHeroBanner";
 import HeroButtons from "./HeroButtons";
 import HeroMovieInfo from "./HeroMovieInfo";
+import HeroGradient from "./HeroGradient";
 
 function Hero() {
   const { data } = useFetch(API_ENDPOINTS.GET_POPULAR_MOVIES);
@@ -12,7 +13,7 @@ function Hero() {
   
   return (
     <section
-      className="min-h-[80%] w-full bg-cover bg-center transition-all duration-700 flex flex-col justify-end items-left relative"
+      className="min-h-full w-full bg-cover bg-center transition-all duration-700 flex flex-col justify-end relative"
       style={{
         backgroundImage: `url(${API_ENDPOINTS.IMAGE_BACKDROP}${data?.results[selectedMovie].backdrop_path})`,
       }}
@@ -22,7 +23,7 @@ function Hero() {
           className="
           bg-black/70
           p-4 z-10
-          flex justify-around items-center flex-col
+          flex justify-center items-center flex-col
           transition-all duration-700
           w-full h-full"
         >
@@ -33,13 +34,13 @@ function Hero() {
               key={data?.results[selectedMovie].id}  // Forzar re-render al cambiar la imagen
               src={`${API_ENDPOINTS.IMAGE_POSTER}${data?.results[selectedMovie].poster_path}`}
               alt={data?.results[selectedMovie].title}
-              className="p-10 w-60 md:w-auto opacity-0 transition-all duration-700 ease-in-out"
+              className="p-10 w-60 md:w-auto opacity-0 scale-95 transition-all duration-700 ease-in-out"
               onLoad={(e) => {
-                e.target.classList.remove("opacity-0");
-                e.target.classList.add("opacity-100");
+                e.target.classList.remove("opacity-0", "scale-95");
+                e.target.classList.add("opacity-100", "scale-100");
               }}
             />
-            
+     
             <HeroMovieInfo data={data} selectedMovie={selectedMovie} />
           </div>
 
@@ -51,6 +52,9 @@ function Hero() {
 
         </div>
       )}
+
+      <HeroGradient />
+
     </section>
   );
 }

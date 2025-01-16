@@ -7,7 +7,8 @@ function Home() {
   return (
     <>
       <Hero/>
-      <MediaScroll url={API_ENDPOINTS.GET_POPULAR_MOVIES} title={"prueba"}/>
+
+      <MediaScroll url={API_ENDPOINTS.GET_POPULAR_MOVIES} title={"Popular Movies"}/>
       
     </>
   )

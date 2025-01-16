@@ -10,10 +10,10 @@ function App() {
       
         <Header />
         
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/logo/:id" element={<div>Hola</div>} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movie/:id" element={<div>Hola</div>} />
+        </Routes>
         
       </BrowserRouter>
 

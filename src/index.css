@@ -9,3 +9,11 @@
 .mediaScrollBar::-webkit-scrollbar {
   display: none; 
 }
+
+.circularBtn {
+  @apply w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-700 shadow-normal
+}
+
+.MediaScrollBtn {
+  @apply px-2 m-2 absolute w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-normal;
+}
