@@ -1,5 +1,6 @@
 import Hero from "./Hero/Hero"
 import MediaScroll from "./MediaScroll/MediaScroll"
+import Collection from "./Collection/Collection"
 import { API_ENDPOINTS } from "../../../assets/apiConfig"
 
 function Home() {
@@ -8,7 +9,18 @@ function Home() {
     <>
       <Hero/>
 
-      <MediaScroll url={API_ENDPOINTS.GET_POPULAR_MOVIES} title={"Popular Movies"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_POPULAR_MOVIES}     title={"Popular Movies"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_NOW_PLAYING_MOVIES} title={"Now Playing"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_TOP_RATED_MOVIES}   title={"Top Rated"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_UPCOMING_MOVIES}    title={"Upcoming Movies"}/>
+
+      <Collection id={264}/>
+
+      <MediaScroll url={API_ENDPOINTS.GET_POPULAR_MOVIES}     title={"Popular Movies"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_NOW_PLAYING_MOVIES} title={"Now Playing"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_TOP_RATED_MOVIES}   title={"Top Rated"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_UPCOMING_MOVIES}    title={"Upcoming Movies"}/>
+
       
     </>
   )

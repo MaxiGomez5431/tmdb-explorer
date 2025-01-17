@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Outfit", serif;
+}
+
 .mediaScrollBar {
   scrollbar-width: none; 
   -ms-overflow-style: none; 
@@ -16,4 +20,16 @@
 
 .MediaScrollBtn {
   @apply px-2 m-2 absolute w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-normal;
+}
+
+.containerPadding {
+  @apply px-5 md:px-16 lg:px-20
+}
+
+.posterSize {
+  @apply min-w-40 max-w-40 md:min-w-48 md:max-w-48 min-h-60 max-h-60 md:min-h-72 md:max-h-72
+}
+
+.backdropSize {
+  @apply min-w-[280px] min-h-[157px] md:min-w-[350px] md:min-h-[196px]
 }

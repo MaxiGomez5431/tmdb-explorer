@@ -4,7 +4,7 @@ import Home from "./components/UI/Home/Home";
 
 function App() {
   return (
-    <main className="h-screen flex flex-col">
+    <main className="h-screen flex flex-col bg-TMDB-950">
 
       <BrowserRouter>
       
