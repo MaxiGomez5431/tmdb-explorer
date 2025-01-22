@@ -24,11 +24,11 @@ export default function Genres ({genreIds, ...props}) {
       {
         genreArray && genreIds &&
 
-        <div {...props} className="flex justify-center items-center">
+        <div {...props} className="flex flex-wrap justify-center items-center">
           {
             genreArray.map((genre, index) => (
               <React.Fragment key={genre}>
-                <p className="text-white md:text-xl mr-3">
+                <p className="text-white md:text-lg mr-3">
                   {genre}
                 </p>
                 {index < genreArray.length - 1 && <span className="text-white mr-3">|</span>}

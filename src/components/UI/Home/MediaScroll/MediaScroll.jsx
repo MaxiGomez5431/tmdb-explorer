@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import useFetch from "../../../../hooks/useFetch"
 import { API_ENDPOINTS } from "../../../../assets/apiConfig"
 import MediaScrollBtns from "./MediaScrollBtns";
@@ -7,10 +7,6 @@ import MediaScrollImg from "./MediaScrollImg";
 export default function MediaScroll({ url, title }) {
   const { data } = useFetch(url);
   const scrollRef = useRef(null);
-
-  useEffect(() => {
-    console.log("en MediaScroll, ", data);
-  }, [data]);
   
   return (
     <section className="relative bg-TMDB-950 group">

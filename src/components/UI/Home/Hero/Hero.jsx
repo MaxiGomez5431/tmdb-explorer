@@ -34,7 +34,7 @@ function Hero() {
               key={data?.results[selectedMovie].id}  // Forzar re-render al cambiar la imagen
               src={`${API_ENDPOINTS.IMAGE_POSTER}${data?.results[selectedMovie].poster_path}`}
               alt={data?.results[selectedMovie].title}
-              className="p-10 w-60 md:w-auto opacity-0 scale-95 transition-all duration-700 ease-in-out"
+              className="p-10  lg:w-auto md:w-80 w-72 opacity-0 scale-95 transition-all duration-700 ease-in-out"
               onLoad={(e) => {
                 e.target.classList.remove("opacity-0", "scale-95");
                 e.target.classList.add("opacity-100", "scale-100");

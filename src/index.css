@@ -33,3 +33,15 @@
 .backdropSize {
   @apply min-w-[280px] min-h-[157px] md:min-w-[350px] md:min-h-[196px]
 }
+
+.iconStyle {
+  @apply flex justify-center items-center text-white m-1 w-10 h-10 duration-100 hover:bg-gray-500 text-2xl
+}
+
+.linkStyle {
+  @apply text-white px-4 py-2 hover:text-TMDB-300 hover:underline duration-200 
+}
+
+.DrawerMenuText {
+  @apply text-white text-lg font-medium hover:text-TMDB-300 border border-x-0 border-t-0 mx-2 py-3 w-auto
+}
