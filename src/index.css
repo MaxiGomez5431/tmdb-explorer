@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 * {
   font-family: "Outfit", serif;
 }
@@ -30,8 +34,8 @@
   @apply min-w-40 max-w-40 md:min-w-48 md:max-w-48 min-h-60 max-h-60 md:min-h-72 md:max-h-72
 }
 
-.backdropSize {
-  @apply min-w-[280px] min-h-[157px] md:min-w-[350px] md:min-h-[196px]
+.aspectBackdrop {
+  @apply aspect-video w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[500px];
 }
 
 .iconStyle {
@@ -39,7 +43,7 @@
 }
 
 .linkStyle {
-  @apply text-white px-4 py-2 hover:text-TMDB-300 hover:underline duration-200 
+  @apply text-white px-4 py-2 hover:text-TMDB-300 hover:underline duration-200 text-lg
 }
 
 .DrawerMenuText {

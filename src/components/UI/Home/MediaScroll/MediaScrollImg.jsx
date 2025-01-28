@@ -12,11 +12,11 @@ export default function MediaScrollImg({ ImageUrl, title, id }) {
       style={{
         backgroundImage: `url(${ImageUrl})`,
       }}
-      className="flex justify-center items-center posterSize my-1 mr-2 bg-cover relative"
+      className="flex justify-center items-center posterSize my-1 mr-2 bg-cover relative rounded"
       alt={title}
       onClick={() => {handleClick(id)}}
     >
-      <div className="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/70 flex justify-center items-center">
+      <div className="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/70 flex justify-center items-center rounded">
         <i className="fa-solid fa-circle-play text-white text-5xl" />
       </div>
     </div>

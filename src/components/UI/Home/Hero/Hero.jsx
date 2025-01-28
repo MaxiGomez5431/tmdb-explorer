@@ -7,7 +7,7 @@ import HeroMovieInfo from "./HeroMovieInfo";
 import HeroGradient from "./HeroGradient";
 
 function Hero() {
-  const { data } = useFetch(API_ENDPOINTS.GET_POPULAR_MOVIES);
+  const { data } = useFetch(API_ENDPOINTS.GET_POPULAR_MOVIES(1));
   const timeoutRef = useRef(null);
   const {changeMovieWithAnimation, selectedMovie, setSelectedMovie} = useHeroBanner({data, timeoutRef })
   
@@ -25,13 +25,13 @@ function Hero() {
           p-4 z-10
           flex justify-center items-center flex-col
           transition-all duration-700
-          w-full h-full"
+          w-full h-screen"
         >
 
           <div className="flex flex-col md:flex-row justify-center items-center">
 
             <img
-              key={data?.results[selectedMovie].id}  // Forzar re-render al cambiar la imagen
+              key={data?.results[selectedMovie].id}
               src={`${API_ENDPOINTS.IMAGE_POSTER}${data?.results[selectedMovie].poster_path}`}
               alt={data?.results[selectedMovie].title}
               className="p-10  lg:w-auto md:w-80 w-72 opacity-0 scale-95 transition-all duration-700 ease-in-out"

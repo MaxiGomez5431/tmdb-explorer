@@ -16,8 +16,12 @@ export const API_ENDPOINTS = {
   GET_MOVIE_IMAGES: (movieData) => `${BASE_URL}/movie/${movieData.id}/images?language=en`,
   GET_MOVIE_DETAILS: (id) => `${BASE_URL}/movie/${id}`,
   GET_COLLECTION: (id) => `${BASE_URL}/collection/${id}`,
-  GET_POPULAR_MOVIES: `${BASE_URL}/movie/popular`,
+  GET_POPULAR_MOVIES: (pageNumber) => `${BASE_URL}/movie/popular?language=en-US&page=${pageNumber}`,
+  GET_MOVIE_BY_GENRE: (genreID, page) => `${BASE_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genreID}`,
   GET_NOW_PLAYING_MOVIES: `${BASE_URL}/movie/now_playing`,
   GET_TOP_RATED_MOVIES: `${BASE_URL}/movie/top_rated`,
   GET_UPCOMING_MOVIES: `${BASE_URL}/movie/upcoming`,
+  GET_POPULAR_SERIES: (pageNumber) => `${BASE_URL}/tv/popular?language=en-US&page=${pageNumber}`,
+  GET_NOW_PLAYING_SERIES: `${BASE_URL}/tv/on_the_air`,
+  GET_TOP_RATED_SERIES: `${BASE_URL}/tv/top_rated`,
 };

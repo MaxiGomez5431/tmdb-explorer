@@ -9,10 +9,10 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="flex items-center bg-TMDB-900/70 backdrop-blur-md rounded-full px-4 py-2 m-2 w-full max-w-72 shadow-md">
+    <div className="flex items-center bg-white  backdrop-blur-md rounded-full px-4 py-2 m-2 max-w-44 md:max-w-72 shadow-md">
       {/* Ícono de búsqueda */}
       <i 
-        className="fa-solid fa-magnifying-glass text-white text-lg mr-2"
+        className="fa-solid fa-magnifying-glass text-TMDB-950 text-lg mr-2"
         onClick={handleSearch}
       />
       
@@ -21,8 +21,8 @@ export default function SearchBar() {
         type="text"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder="Search for movies, series..."
-        className="flex-1 bg-transparent text-white placeholder-gray-400 focus:outline-none"
+        placeholder="Search..."
+        className="flex-1 bg-transparent placeholder-gray-600 outline-none w-[100px] sm:w-[150px]"
       />
 
     </div>

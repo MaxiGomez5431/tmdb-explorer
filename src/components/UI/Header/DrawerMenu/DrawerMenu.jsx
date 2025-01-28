@@ -16,7 +16,7 @@ export default function DrawerMenu({ data }) {
 
       {/* Menú deslizante */}
       <div
-        className={`fixed top-0 right-0 h-screen w-1/2 bg-TMDB-900 flex flex-col justify-start items-end 
+        className={`fixed top-0 right-0 h-screen w-auto bg-TMDB-900 flex flex-col justify-start items-end 
           transform transition-transform duration-300 shadow-xl 
           overflow-y-auto
           ${
@@ -81,14 +81,16 @@ export default function DrawerMenu({ data }) {
                   : "max-h-0 opacity-0 pointer-events-none invisible"
               }`}
             >
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-4 px-4 py-2 border border-t-0 mx-2">
+              <div className="grid grid-cols-2 gap-x-4 gap-y-4 px-4 py-2 border border-t-0 mx-2 items-center">
                 {data &&
                   data.genres &&
                   data.genres.map((genre) => (
                     <Link
                       key={genre.id}
                       to={`/genres/${genre.id}`}
-                      className="text-white hover:text-TMDB-300 text-sm font-light text-center border border-TMDB-300 rounded-md py-2 px-3 transition-colors"
+                      className="text-white text-sm font-light text-center
+                      border border-TMDB-300 rounded-md py-2 px-3 transition-colors
+                      focus:text-white focus:bg-TMDB-600 focus:border-white focus:border-2 "
                     >
                       {genre.name}
                     </Link>

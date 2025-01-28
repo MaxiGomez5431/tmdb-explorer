@@ -33,13 +33,14 @@ export default function Collection ({id}) {
 
       <img src={`https://images.squarespace-cdn.com/content/v1/5c62c09c4d546e27dc1016c7/1549976171566-X2RVWGU4G2GD1JXMVTRQ/logo.png?format=1500w`} alt="" />
 
-      <div className="flex flex-wrap justify-evenly">
+      <div className="flex flex-wrap justify-evenly w-full">
         {
           collectionData?.data?.parts.map((movie) => (
-            <Backdrop 
-              ImageUrl={movie?.backdrop_path}
-              title={movie?.title}
-              id={movie?.id}
+            <Backdrop
+              ImageUrl={movie.backdrop_path}
+              title={movie.title}
+              id={movie.id}
+              key={movie.id}
             />
           ))
         }
