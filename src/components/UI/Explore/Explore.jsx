@@ -10,7 +10,7 @@ export default function Explore ({title, url, page}) {
   const {data} = useFetch(url(actualPage))
 
   useReachBottom(() => {addMoreMovies()})
-
+  
   const addMoreMovies = () => {
     setActualPage(actualPage + 1)
     setIsFetching(true)

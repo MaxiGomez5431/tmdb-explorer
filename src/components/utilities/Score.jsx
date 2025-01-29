@@ -17,15 +17,15 @@ export default function Genres({ score, ...props }) {
   const stars = [];
   for (let i = 0; i < 5; i++) {
     if (i < roundedScore) {
-      stars.push(<i key={i} className="fa-solid fa-star"/>);
+      stars.push(<i key={i} className="fa-solid fa-star mr-1"/>);
     } else {
-      stars.push(<i key={i} className="fa-regular fa-star"/>);
+      stars.push(<i key={i} className="fa-regular fa-star mr-1"/>);
     }
   }
 
   return (
     <div {...props}>
-      <div>{stars}</div> {/* Mostrar las estrellas */}
+      <div>{stars}</div>
     </div>
   );
 }
