@@ -1,5 +1,6 @@
 import { API_ENDPOINTS } from "../../../assets/apiConfig";
 import useFetch from "../../../hooks/useFetch";
+import Gradient from "../../utilities/Gradient";
 
 export default function MovieDetails ({id}) {
   const { data } = useFetch(API_ENDPOINTS.GET_MOVIE_DETAILS(id));

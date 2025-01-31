@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router';
 import { API_ENDPOINTS } from '../../assets/apiConfig';
 
-export default function Backdrop({ ImageUrl, title, id}) {
+export default function Backdrop({ ImageUrl, title, id, mediaType}) {
   const navigate = useNavigate();
 
   const handleClick = (id) => {
-    navigate(`/movie/${id}`);
+    navigate(`/${mediaType}/${id}`);
   };
 
   return (

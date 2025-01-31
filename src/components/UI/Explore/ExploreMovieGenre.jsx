@@ -1,16 +1,16 @@
 import { API_ENDPOINTS } from "../../../assets/apiConfig";
-import ExploreMovies from "./Explore"
+import ExploreCatalog from "./ExploreCatalog";
 import { useParams } from "react-router";
 
-export default function ExploreGenres() {
+export default function ExploreGenres({genresUrl, type}) {
   const { id } = useParams();
-  const buildUrl = (page) => API_ENDPOINTS.GET_MOVIE_BY_GENRE(id, page);
+  const buildUrl = (page) => genresUrl(id, page);
 
   return (
-    <ExploreMovies 
-      title="Explore Genre" 
+    <ExploreCatalog 
       url={buildUrl}
       page={1} 
+      type={type}
     />
   );
 }

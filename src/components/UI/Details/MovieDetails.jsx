@@ -14,12 +14,14 @@ export default function MovieDetails () {
     <>
       <MovieDetailsHero id={id} />
       <MovieActors id={id} />
-      <MovieProduction id={id}/>
 
-      
-      {/*ACA EL GRADIENTE PARA QUE HAYA ALGO DE CAMBIO DE COLOR */}
-      <MediaScroll url={API_ENDPOINTS.GET_MOVIE_SIMILAR(id)} title={"Similar"}/>
-      <MediaScroll url={API_ENDPOINTS.GET_MOVIE_RECOMMENDATION(id)} title={"Recommendations"}/>
+      <div>
+        <MovieProduction id={id}/>
+        <Gradient color={"TMDB-950"}/>
+      </div>
+
+      <MediaScroll url={API_ENDPOINTS.GET_MOVIE_RECOMMENDATION(id)} title={"Recommendations"} className={"bg-TMDB-800 pt-16"}/>
+      <MediaScroll url={API_ENDPOINTS.GET_MOVIE_SIMILAR(id)} title={"Similar"} className={"bg-TMDB-800"}/>
     </>
   )
 }
