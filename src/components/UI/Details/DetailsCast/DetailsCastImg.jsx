@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { API_ENDPOINTS } from "../../../assets/apiConfig";
+import { API_ENDPOINTS } from "../../../../assets/apiConfig";
 
-export default function MovieActorsImg({ ImageUrl, name, characterName }) {
+export default function DetailsCastImg({ ImageUrl, name, characterName }) {
   const [isHovered, setIsHovered] = useState(false);
 
   const backgroundImage =  ImageUrl ? `${API_ENDPOINTS.IMAGE_POSTER}${ImageUrl}` : `https://ia601307.us.archive.org/1/items/instagram-plain-round/instagram%20dip%20in%20hair.jpg`

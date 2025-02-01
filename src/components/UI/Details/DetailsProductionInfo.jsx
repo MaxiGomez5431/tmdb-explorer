@@ -1,9 +1,12 @@
 import { API_ENDPOINTS } from "../../../assets/apiConfig";
+import { useMediaType } from "../../../context/MediaContext";
 import useFetch from "../../../hooks/useFetch";
-import Gradient from "../../utilities/Gradient";
 
-export default function MovieDetails ({id}) {
-  const { data } = useFetch(API_ENDPOINTS.GET_MOVIE_DETAILS(id));
+
+export default function DetailsProductionInfo ({id}) {
+  const mediaType = useMediaType()
+  let mediaUrl = mediaType === "movie" ? API_ENDPOINTS.GET_MOVIE_DETAILS : API_ENDPOINTS.GET_SERIE_DETAILS
+  const { data } = useFetch(mediaUrl(id));
 
   const titleStyle = "text-neutral-400 text-2xl py-1"
   const textStyle = "text-white text-xl font-light py-1"

@@ -1,15 +1,18 @@
-import { useEffect } from "react";
 import useFetch from "../../../../hooks/useFetch";
-import MovieDetailsInfo from "./MovieDetailsInfo"
+import MovieDetailsInfo from "./DetailsInfo"
 import { API_ENDPOINTS } from "../../../../assets/apiConfig";
+import { useEffect } from "react";
+import { useMediaType } from "../../../../context/MediaContext";
 
-function MovieDetailsHero({id}) {
-  const { data } = useFetch(API_ENDPOINTS.GET_MOVIE_DETAILS(id));
+export default function DetailsHero({id}) {
+  const mediaType = useMediaType()
+  const mediaUrl = mediaType === "movie" ? API_ENDPOINTS.GET_MOVIE_DETAILS : API_ENDPOINTS.GET_SERIE_DETAILS
+  const { data } = useFetch(mediaUrl(id));
 
-  useEffect (() => {
+  useEffect(() => {
     console.log(data)
   }, [data])
-  
+
   return (
     <section
       className="min-h-full w-full bg-cover bg-center transition-all duration-700 flex flex-col justify-end relative"
@@ -19,26 +22,16 @@ function MovieDetailsHero({id}) {
     >
       <div 
         className="
-        bg-black/70
-        z-10
+        bg-black/70 z-10
         flex justify-end items-end flex-col
         transition-all duration-700
         w-full h-screen"
       >
 
         {data &&
-
           <div className="w-full absolute z-10 min-h-auto bg-gradient-to-t from-TMDB-950 flex justify-between containerPadding items-end pb-10"> 
 
-            <MovieDetailsInfo data={data}> {/*PORQUE ESTO NO ESTá adentro de movie details info */}
-
-              <div className="!mt-5">
-                <h1 className="text-xl text-white font-semibold">{data.tagline || "Synopsis"}</h1>
-                <p className="text-md text-white">{data.overview}</p>
-              </div>
-              
-            </MovieDetailsInfo>
-
+            <MovieDetailsInfo data={data} />
             
             <img src={`${API_ENDPOINTS.IMAGE_POSTER}${data.poster_path}`} className="posterSize"/>
           </div>
@@ -50,4 +43,3 @@ function MovieDetailsHero({id}) {
   );
 }
 
-export default MovieDetailsHero;

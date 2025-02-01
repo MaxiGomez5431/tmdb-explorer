@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react"
-import { API_ENDPOINTS } from "../../../assets/apiConfig"
-import useFetch from "../../../hooks/useFetch"
-import MediaScrollBtns from "../Home/MediaScroll/MediaScrollBtns"
-import MovieActorsImg from "./MovieActorsImg"
+import { API_ENDPOINTS } from "../../../../assets/apiConfig"
+import useFetch from "../../../../hooks/useFetch"
+import MediaScrollBtns from "../../Home/MediaScroll/MediaScrollBtns"
+import DetailsCastImg from "./DetailsCastImg"
+import { useMediaType } from "../../../../context/MediaContext"
 
-export default function MovieDetails ({id}) {
-  const {data} = useFetch(API_ENDPOINTS.GET_MOVIE_CREDITS(id))
+export default function DetailsCast ({id}) {
+  const mediaType = useMediaType()
+  let mediaUrl = mediaType === "movie" ? API_ENDPOINTS.GET_MOVIE_CREDITS : API_ENDPOINTS.GET_SERIE_CREDITS
+  const {data} = useFetch(mediaUrl(id))
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ export default function MovieDetails ({id}) {
           ref={scrollRef}
         >
           {data?.cast.map((actor) => (
-            <MovieActorsImg
+            <DetailsCastImg
               key={actor.cast_id}
               ImageUrl={actor.profile_path}
               name={actor.name}

@@ -1,11 +1,6 @@
 import { Link } from "react-router";
-import { useState } from "react";
-
 
 export default function NavBar ({data}) {
-
-  const [isExploreOpen, setIsExploreOpen] = useState(false);
-  const [isGenresOpen, setIsGenresOpen] = useState(false);
 
   return (
     <nav className="flex flex-1 items-center justify-center space-x-6 w-auto max-w-1/3">

@@ -4,7 +4,7 @@ import { API_ENDPOINTS } from "../../../../assets/apiConfig"
 import MediaScrollBtns from "./MediaScrollBtns";
 import MediaScrollImg from "./MediaScrollImg";
 
-export default function MediaScroll({ url, title, id, ...props}) {
+export default function MediaScroll({ url, title, id, mediaType, ...props}) {
   const { data } = useFetch(url);
   const [usableData, setUsableData] = useState(null)
   const scrollRef = useRef(null);
@@ -33,6 +33,7 @@ export default function MediaScroll({ url, title, id, ...props}) {
               ImageUrl={`${API_ENDPOINTS.IMAGE_POSTER}${media.poster_path}`}
               alt={media.title}
               id={media.id}
+              mediaType={mediaType}
             />
           ))}
         </div>

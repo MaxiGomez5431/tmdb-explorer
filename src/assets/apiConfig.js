@@ -26,8 +26,12 @@ export const API_ENDPOINTS = {
   GET_UPCOMING_MOVIES: `${BASE_URL}/movie/upcoming`,
   
   GET_SERIES_GENRES: `${BASE_URL}/genre/tv/list`,
+  GET_SERIE_DETAILS: (id) => `${BASE_URL}/tv/${id}`,
   GET_SERIE_BY_GENRE: (genreID, page) => `${BASE_URL}/discover/tv?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${genreID}`,
   GET_POPULAR_SERIES: (pageNumber) => `${BASE_URL}/tv/popular?language=en-US&page=${pageNumber}`,
+  GET_SERIE_CREDITS: (id) => `${BASE_URL}/tv/${id}/credits`,
+  GET_SERIE_SIMILAR: (id) => `${BASE_URL}/tv/${id}/similar`,
+  GET_SERIE_RECOMMENDATION: (id) => `${BASE_URL}/tv/${id}/recommendations`,
   GET_NOW_PLAYING_SERIES: `${BASE_URL}/tv/on_the_air`,
   GET_TOP_RATED_SERIES: `${BASE_URL}/tv/top_rated`,
 };
