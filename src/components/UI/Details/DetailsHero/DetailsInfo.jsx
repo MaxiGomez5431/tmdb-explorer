@@ -29,7 +29,7 @@ export default function HeroMovieInfo ({data, children}) {
   
 
   return (
-    <div className="flex flex-col text-left max-w-[40%] space-y-2">
+    <div className="flex flex-col text-left max-w-full sm:max-w-[40%] space-y-2">
       <h1 className="text-white lg:text-4xl md:text-3xl text-2xl">
         {data?.title || data?.name}
       </h1>

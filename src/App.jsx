@@ -6,6 +6,7 @@ import { API_ENDPOINTS } from "./assets/apiConfig";
 import Details from "./components/UI/Details/Details"
 import Explore from "./components/UI/Explore/Explore";
 import ExploreCatalog from "./components/UI/Explore/ExploreCatalog";
+import ExploreSearch from "./components/UI/Explore/ExploreSearch.jsx";
 import { MediaProvider } from "./context/MediaContext.jsx";
 
 function App() {
@@ -20,8 +21,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
 
+
             <Route path="/movie/:id" element={<Details />} />
             <Route path="/serie/:id" element={<Details />} />
+
+            <Route path="/search/:query" element={<Explore title="Movies"/>}>
+              <Route index element={<ExploreSearch url={API_ENDPOINTS.SEARCH_MOVIE}/>} />
+            </Route>
 
             <Route path="/explore/movies" element={<Explore title="Movies" url={API_ENDPOINTS.GET_MOVIE_GENRES}/>}>
               <Route index element={<ExploreCatalog url={API_ENDPOINTS.GET_POPULAR_MOVIES} page={1} type={"movie"}/>} />

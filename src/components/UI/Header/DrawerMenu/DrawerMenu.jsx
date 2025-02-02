@@ -57,47 +57,6 @@ export default function DrawerMenu({ data }) {
               Series
             </Link>
 
-         
-            {/* text géneros */}
-            <div
-              onClick={() => setIsGenresOpen(!isGenresOpen)}
-              className="DrawerMenuText mb-0 space-x-2"
-            >
-              
-              <i
-                className={`fa-solid transition-transform duration-300 ${
-                  isGenresOpen ? "fa-chevron-up rotate-180" : "fa-chevron-down"
-                }`}
-              />
-
-              <span>Genres</span>
-            </div>
-
-            {/* Lista de géneros */}
-            <div
-              className={`transition-all duration-500 ${
-                isGenresOpen
-                  ? "max-h-[480px] opacity-100 pointer-events-auto visible"
-                  : "max-h-0 opacity-0 pointer-events-none invisible"
-              }`}
-            >
-              <div className="grid grid-cols-2 gap-x-4 gap-y-4 px-4 py-2 border border-t-0 mx-2 items-center">
-                {data &&
-                  data.genres &&
-                  data.genres.map((genre) => (
-                    <Link
-                      key={genre.id}
-                      to={`/genres/${genre.id}`}
-                      className="text-white text-sm font-light text-center
-                      border border-TMDB-300 rounded-md py-2 px-3 transition-colors
-                      focus:text-white focus:bg-TMDB-600 focus:border-white focus:border-2 "
-                    >
-                      {genre.name}
-                    </Link>
-                  ))}
-              </div>
-            </div>
-
           </div>  
         </div>
       </div>

@@ -41,6 +41,7 @@ export default function Collection ({id}) {
               title={movie.title}
               id={movie.id}
               key={movie.id}
+              mediaType={"movie"}
             />
           ))
         }

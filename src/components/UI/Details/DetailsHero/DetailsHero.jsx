@@ -3,11 +3,13 @@ import MovieDetailsInfo from "./DetailsInfo"
 import { API_ENDPOINTS } from "../../../../assets/apiConfig";
 import { useEffect } from "react";
 import { useMediaType } from "../../../../context/MediaContext";
+import useMobile from "../../../../hooks/useMobile"
 
 export default function DetailsHero({id}) {
   const mediaType = useMediaType()
   const mediaUrl = mediaType === "movie" ? API_ENDPOINTS.GET_MOVIE_DETAILS : API_ENDPOINTS.GET_SERIE_DETAILS
   const { data } = useFetch(mediaUrl(id));
+  const { isMobile } = useMobile(650)
 
   useEffect(() => {
     console.log(data)
@@ -33,7 +35,12 @@ export default function DetailsHero({id}) {
 
             <MovieDetailsInfo data={data} />
             
-            <img src={`${API_ENDPOINTS.IMAGE_POSTER}${data.poster_path}`} className="posterSize"/>
+            { 
+              !isMobile &&
+              <img src={`${API_ENDPOINTS.IMAGE_POSTER}${data.poster_path}`} className="posterSize"/>
+            }  
+            
+          
           </div>
         }
 

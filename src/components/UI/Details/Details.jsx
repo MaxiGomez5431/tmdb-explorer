@@ -31,8 +31,8 @@ export default function Details() {
         <Gradient color={"TMDB-950"} />
       </div>
 
-      <MediaScroll url={recomendationsUrl} title={"Recommendations"} className={"bg-TMDB-800 pt-16"} mediaType={mediaType} />
-      <MediaScroll url={similarUrl} title={"Similar"} className={"bg-TMDB-800"} mediaType={mediaType} />
+      <MediaScroll url={recomendationsUrl} title={"Recommendations"} className={"bg-TMDB-800 pt-20 group"} mediaType={mediaType} />
+      <MediaScroll url={similarUrl} title={"Similar"} className={"bg-TMDB-800 group"} mediaType={mediaType} />
     </>
   );
 }

@@ -1,4 +1,3 @@
-import { API_ENDPOINTS } from "../../../assets/apiConfig";
 import ExploreCatalog from "./ExploreCatalog";
 import { useParams } from "react-router";
 

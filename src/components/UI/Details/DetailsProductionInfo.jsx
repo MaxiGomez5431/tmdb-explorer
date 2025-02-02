@@ -13,9 +13,9 @@ export default function DetailsProductionInfo ({id}) {
 
   return (
 
-    <section className="flex flex-wrap justify-between items-center bg-TMDB-950 text-white text-left containerPadding py-10 px-4 relative">
+    <section className="flex flex-col sm:flex-row flex-wrap justify-between items-start bg-TMDB-950 text-white text-left containerPadding py-10 px-4 relative">
 
-      <div>
+      <div className="my-2">
         <h1 className={titleStyle}>Production company</h1>
         { 
           data &&
@@ -25,7 +25,7 @@ export default function DetailsProductionInfo ({id}) {
         }
       </div>
 
-      <div>
+      <div className="my-2">
         <h1 className={titleStyle}>Production countries</h1>
         { 
           data &&
@@ -35,12 +35,12 @@ export default function DetailsProductionInfo ({id}) {
         }
       </div>
 
-      <div>
+      <div className="my-2">
         <h1 className={titleStyle}>Budget</h1>
         <p className={textStyle}>{`$${data?.budget}`}</p>
       </div>
 
-      <div>
+      <div className="my-2">
         <h1 className={titleStyle}>Revenue</h1>
         <p className={textStyle}>{`$${data?.revenue}`}</p>
       </div>

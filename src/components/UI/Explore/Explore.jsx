@@ -2,7 +2,7 @@ import { Outlet, Link } from "react-router";
 import useFetch from "../../../hooks/useFetch";
 
 export default function Explore({title, url}) {
-  const { data } = useFetch(url);
+  const { data } = url ? useFetch(url) : { data: null };
 
   return (
     <section className="min-h-lvh">
