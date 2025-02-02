@@ -30,12 +30,16 @@ html {
   @apply px-5 md:px-16 lg:px-20
 }
 
+.containerMargin {
+  @apply mx-5 md:mx-16 lg:mx-20
+}
+
 .posterSize {
   @apply min-w-40 max-w-40 md:min-w-48 md:max-w-48 min-h-60 max-h-60 md:min-h-72 md:max-h-72
 }
 
 .aspectBackdrop {
-  @apply aspect-video w-full h-auto max-w-[250px] sm:max-w-[300px] md:max-w-[350px] lg:max-w-[500px];
+  @apply aspect-video w-full h-auto max-w-full sm:max-w-[300px] md:max-w-[350px] ;
 }
 
 .iconStyle {

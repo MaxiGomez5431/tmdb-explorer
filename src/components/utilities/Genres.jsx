@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import SeparationSpan from "./SeparationSpan";
 
-export default function Genres({ genreIds, ...props }) {
+export default function Genres({ genreIds, justify, ...props }) {
   const { data } = useFetch(API_ENDPOINTS.GET_MOVIE_GENRES);
   const [genreArray, setGenreArray] = useState([]);
 
@@ -20,17 +20,17 @@ export default function Genres({ genreIds, ...props }) {
         return item.name;
       }
       const genre = genres.find((genre) => genre.id === item);
-      return genre ? genre.name : "Desconocido";
+      return genre ? genre.name : null;
     });
   }
 
   return (
     <>
       {genreArray.length > 0 && genreIds && (
-        <div {...props} className="flex flex-wrap items-left">
+        <div {...props} className={`flex flex-wrap ${justify}`}>
           {genreArray.map((genre, index) => (
             <React.Fragment key={genre}>
-              <p className="text-white md:text-lg mr-3">{genre}</p>
+              <p className="text-white text-center md:text-lg mr-1">{genre}</p>
               {index < genreArray.length - 1 && <SeparationSpan/>}
             </React.Fragment>
           ))}

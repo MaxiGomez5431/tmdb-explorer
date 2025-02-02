@@ -36,7 +36,8 @@ export default function HeroMovieInfo ({data, children}) {
 
       <Genres 
         genreIds={data?.genres} 
-        className="flex flex-wrap my-3 justify-start" 
+        className="flex flex-wrap my-3" 
+        justify={"justify-start"}
       />
 
       <div className="flex items-center space-x-4">

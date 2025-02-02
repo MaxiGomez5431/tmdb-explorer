@@ -10,7 +10,7 @@ export default function Backdrop({ ImageUrl, title, id, mediaType}) {
 
   return (
     <div
-      className={`flex justify-center items-center aspectBackdrop m-2 relative hover:-translate-y-1 duration-100`}
+      className={`flex justify-center items-center aspectBackdrop relative hover:-translate-y-1 duration-100`}
       alt={title}
       onClick={() => {handleClick(id)}}
     >
@@ -22,7 +22,7 @@ export default function Backdrop({ ImageUrl, title, id, mediaType}) {
       />
 
       <div className="absolute w-full h-full flex flex-col justify-end items-left rounded-lg bg-black/20 p-3">
-        <h3 className='text-xl uppercase md:text-2xl text-white'>{title}</h3>
+        <h3 className='text-sm sm:text-md md:text-lg  uppercase  text-white'>{title}</h3>
       </div>
 
       <div className="absolute inset-0 opacity-0 transition-opacity duration-300 hover:opacity-100 bg-black/50 flex justify-center items-center rounded-lg">

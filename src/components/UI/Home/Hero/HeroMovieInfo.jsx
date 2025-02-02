@@ -10,7 +10,8 @@ export default function HeroMovieInfo ({data, selectedMovie}) {
 
       <Genres 
         genreIds={data?.results[selectedMovie]?.genre_ids} 
-        className="flex flex-wrap my-3 justify-center" 
+        className="flex flex-wrap my-3" 
+        justify={"justify-center"}
       />
 
       <Score 

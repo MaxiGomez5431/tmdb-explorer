@@ -12,7 +12,7 @@ export default function Explore({title, url}) {
       >
         <h1 className="text-3xl m-2 text-white font-medium uppercase">{title}</h1>
 
-        <div className="flex flex-wrap justify-left items-center overflow-hidden">
+        <div className="flex flex-wrap justify-center items-center overflow-hidden">
           {data?.genres.map((genre) => (
             <Link
               key={genre.id}

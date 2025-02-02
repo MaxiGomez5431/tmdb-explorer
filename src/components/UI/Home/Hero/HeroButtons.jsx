@@ -42,7 +42,7 @@ export default function HeroButtons({ totalItems, changeMovie, setSelectedMovie 
         ❮
       </button>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-2">
         {Array.from({ length: totalItems }).map((_, index) => (
           <span
             key={index}

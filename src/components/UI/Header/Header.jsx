@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full flex justify-between items-center transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full flex justify-between items-center transition-all duration-300 containerPadding ${
         isScrolled
           ? "bg-TMDB-500/10 backdrop-blur-md shadow-md"
           : "bg-transparent"
@@ -45,14 +45,14 @@ export default function Header() {
           </div>
 
           {/* Search Bar */}
-          <div className="flex-none ml-auto mr-4">
+          <div className="flex-none">
             <SearchBar />
           </div>
         </>
 
         :
         
-        <div className="flex-none ml-auto mr-4">
+        <div className="flex-none">
           <DrawerMenu data={data} />
         </div>
 

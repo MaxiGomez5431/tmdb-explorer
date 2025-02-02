@@ -12,7 +12,7 @@ export default function SearchBar() {
   };
   
   return (
-    <div className="flex items-center bg-white backdrop-blur-md rounded-full px-4 py-2 m-2 max-w-44 md:max-w-72 shadow-md">
+    <div className="flex items-center bg-white backdrop-blur-md rounded-full px-4 py-2 my-2 max-w-44 md:max-w-72 shadow-md">
       {/* Ícono de búsqueda */}
       <i 
         className="fa-solid fa-magnifying-glass text-TMDB-950 text-lg mr-2 cursor-pointer"

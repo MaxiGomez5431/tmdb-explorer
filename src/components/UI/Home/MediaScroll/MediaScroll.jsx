@@ -18,8 +18,8 @@ export default function MediaScroll({ url, title, id, mediaType, ...props}) {
   },[data])
   
   return (
-    <section className="relative bg-TMDB-950 group scroll-mt-16 w-full" id={id}  {...props}>
-      <h2 className="text-white text-3xl py-2 containerPadding">{title}</h2>
+    <section className="relative bg-TMDB-950 group scroll-mt-16 w-full py-3" id={id}  {...props}>
+      <h2 className="text-white text-3xl py-1 containerPadding">{title}</h2>
 
       <div className="flex justify-between items-center">
         

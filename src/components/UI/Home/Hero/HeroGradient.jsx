@@ -1,11 +1,11 @@
 export default function HeroGradient () {
   return (
-    <div className="w-full absolute z-10 min-h-[10%] bg-gradient-to-t from-TMDB-950 flex justify-center items-center "> 
+    <div className="w-full absolute z-10 min-h-[10%] bg-gradient-to-t from-TMDB-950 flex justify-center items-center pt-10"> 
       <a 
-        className="circularBtn flex justify-center items-center active:translate-y-1"
+        className="circularBtn flex justify-center items-center active:translate-y-1 animate-bounce"
         href="#first"
       >
-        <i className="fa-solid fa-arrow-down text-white text-2xl"/>
+        <i className="fa-solid fa-arrow-down text-white text-2xl "/>
       </a>  
     </div>
   )

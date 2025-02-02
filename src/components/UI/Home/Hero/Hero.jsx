@@ -7,7 +7,7 @@ import HeroMovieInfo from "./HeroMovieInfo";
 import HeroGradient from "./HeroGradient";
 
 function Hero() {
-  const { data } = useFetch(API_ENDPOINTS.GET_POPULAR_MOVIES(1));
+  const { data } = useFetch(API_ENDPOINTS.GET_POPULAR_MOVIES(7));
   const timeoutRef = useRef(null);
   const {changeMovieWithAnimation, selectedMovie, setSelectedMovie} = useHeroBanner({data, timeoutRef })
   
@@ -21,7 +21,7 @@ function Hero() {
       {data && (
         <div 
           className="
-          bg-black/70
+          bg-black/70 
           p-4 z-10
           flex justify-center items-center flex-col
           transition-all duration-700
