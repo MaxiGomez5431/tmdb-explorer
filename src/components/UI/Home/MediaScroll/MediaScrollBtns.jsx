@@ -1,6 +1,6 @@
 import useMobile from "../../../../hooks/useMobile"
 
-export default function MediaScrollBtns({ scrollRef }) {
+export default function MediaScrollBtns({ scrollRef, leftStyle = "MediaScrollBtn", rightStyle = "MediaScrollBtn", animation}) {
   const { isMobile } = useMobile(768)
 
   const scrollLeft = () => {
@@ -25,16 +25,16 @@ export default function MediaScrollBtns({ scrollRef }) {
         <>
           <button
             onClick={scrollLeft}
-            className={`MediaScrollBtn left-2 active:translate-y-1`}
+            className={`${leftStyle} left-2 absolute z-30`}
           >
-            <i className="fa-solid fa-chevron-left text-white text-2xl" />
+            <i className={`fa-solid fa-chevron-left text-white text-2xl`} />
           </button>
 
           <button
             onClick={scrollRight}
-            className={`MediaScrollBtn right-2 active:translate-y-1`}
+            className={`${rightStyle} right-2 absolute z-30`}
           >
-            <i className="fa-solid fa-chevron-right text-white text-2xl" />
+            <i className={`fa-solid fa-chevron-right text-white text-2xl`} />
           </button>
 
         </>

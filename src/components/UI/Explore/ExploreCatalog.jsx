@@ -40,7 +40,7 @@ export default function ExploreCatalog({url, page, type}) {
   return (
 
     <div className="flex flex-col bg-TMDB-950 justify-center items-center containerPadding">
-      <div className="flex flex-row flex-wrap justify-between items-center bg-TMDB-950">
+      <div className="flex flex-row flex-wrap justify-between items-center bg-TMDB-950 mt-5">
         {
           extendableData &&
           extendableData.map((media) => (

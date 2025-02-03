@@ -8,8 +8,6 @@ export default function ExploreSearch({url}) {
 
   return (
     <>
-      
-
       <ExploreCatalog 
         url={buildUrl}
         page={1} 

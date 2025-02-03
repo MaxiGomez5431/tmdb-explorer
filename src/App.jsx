@@ -8,12 +8,14 @@ import Explore from "./components/UI/Explore/Explore";
 import ExploreCatalog from "./components/UI/Explore/ExploreCatalog";
 import ExploreSearch from "./components/UI/Explore/ExploreSearch.jsx";
 import { MediaProvider } from "./context/MediaContext.jsx";
+import ScrollToTop from "./components/utilities/ScrollToTop.jsx";
 
 function App() {
   return (
     <main className="h-screen flex flex-col bg-TMDB-950">
 
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
 
         <MediaProvider>

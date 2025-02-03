@@ -12,35 +12,38 @@ export default function MediaScroll({ url, title, id, mediaType, ...props}) {
   useEffect(() => {
     if (data) {
       let curatedData = data.results.filter((movie) => movie.backdrop_path && movie.poster_path )
+      curatedData = curatedData.length === 0 ? null : curatedData
       setUsableData(curatedData)
       console.log(usableData)
     }
   },[data])
   
   return (
-    <section className="relative bg-TMDB-950 group scroll-mt-16 w-full py-3" id={id}  {...props}>
-      <h2 className="text-white text-3xl py-1 containerPadding">{title}</h2>
-
-      <div className="flex justify-between items-center">
-        
-        <div
-          className="flex containerPadding items-center flex-row overflow-x-scroll overflow-y-visible mediaScrollBar w-full h-[300px]"
-          ref={scrollRef}
-        >
-          {usableData?.map((media) => (
-            <MediaScrollImg
-              key={media.id}
-              ImageUrl={`${API_ENDPOINTS.IMAGE_POSTER}${media.poster_path}`}
-              alt={media.title}
-              id={media.id}
-              mediaType={mediaType}
-            />
-          ))}
-        </div>
-        
-        <MediaScrollBtns scrollRef={scrollRef} />
-
-      </div>
-    </section>
+    usableData && (
+      <>
+        <section className="relative bg-TMDB-950 group scroll-mt-16 w-full py-3" id={id} {...props}>
+          <h2 className="text-white text-3xl py-1 containerPadding">{title}</h2>
+  
+          <div className="flex justify-between items-center">
+            <div
+              className="flex containerPadding items-center flex-row overflow-x-scroll overflow-y-visible mediaScrollBar w-full"
+              ref={scrollRef}
+            >
+              {usableData?.map((media) => (
+                <MediaScrollImg
+                  key={media.id}
+                  ImageUrl={`${API_ENDPOINTS.IMAGE_POSTER}${media.poster_path}`}
+                  alt={media.title}
+                  id={media.id}
+                  mediaType={mediaType}
+                />
+              ))}
+            </div>
+  
+            <MediaScrollBtns scrollRef={scrollRef} />
+          </div>
+        </section>
+      </>
+    )
   );
 }

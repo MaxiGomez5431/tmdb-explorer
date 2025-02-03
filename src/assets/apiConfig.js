@@ -24,8 +24,8 @@ export const API_ENDPOINTS = {
   GET_POPULAR_MOVIES: (pageNumber) => `${BASE_URL}/movie/popular?page=${pageNumber}${params}`,
   GET_MOVIE_BY_GENRE: (genreID, page) => `${BASE_URL}/discover/movie?page=${page}&sort_by=popularity.desc&with_genres=${genreID}${params}`,
   
-  GET_NOW_PLAYING_MOVIES: `${BASE_URL}/movie/now_playing?${params}`,
-  GET_TOP_RATED_MOVIES: `${BASE_URL}/movie/top_rated?${params}`,
+  GET_NOW_PLAYING_MOVIES: (pageNumber) => `${BASE_URL}/movie/now_playing?page=${pageNumber}${params}`,
+  GET_TOP_RATED_MOVIES: (pageNumber) => `${BASE_URL}/movie/top_rated?page=${pageNumber}${params}`,
   GET_UPCOMING_MOVIES: `${BASE_URL}/movie/upcoming?${params}`,
   
   GET_SERIES_GENRES: `${BASE_URL}/genre/tv/list?${params}`,
@@ -36,6 +36,6 @@ export const API_ENDPOINTS = {
   GET_SERIE_SIMILAR: (id) => `${BASE_URL}/tv/${id}/similar?${params}`,
   GET_SERIE_RECOMMENDATION: (id) => `${BASE_URL}/tv/${id}/recommendations?${params}`,
   GET_NOW_PLAYING_SERIES: `${BASE_URL}/tv/on_the_air?${params}`,
-  GET_TOP_RATED_SERIES: `${BASE_URL}/tv/top_rated?${params}`,
+  GET_TOP_RATED_SERIES: (pageNumber) => `${BASE_URL}/tv/top_rated?page=${pageNumber}${params}`,
 };
 

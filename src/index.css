@@ -19,11 +19,19 @@ html {
 }
 
 .circularBtn {
-  @apply w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-700 shadow-normal
+  @apply w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-500 shadow-normal
 }
 
 .MediaScrollBtn {
-  @apply px-2 m-2 z-30 absolute w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-normal;
+  @apply px-2 m-2 w-12 h-12 md:w-14 md:h-14 rounded-full bg-TMDB-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-normal active:translate-y-1;
+}
+
+.MediaGenderScrollBtnRight {
+  @apply absolute right-0 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 bg-gradient-to-l from-black active:scale-95
+}
+
+.MediaGenderScrollBtnLeft {
+  @apply absolute left-0 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10  bg-gradient-to-r from-black active:scale-95
 }
 
 .containerPadding {
@@ -47,9 +55,9 @@ html {
 }
 
 .linkStyle {
-  @apply text-white px-4 py-2 hover:text-TMDB-300 hover:underline duration-200 text-lg
+  @apply text-white px-4 py-2 hover:text-white hover:underline duration-200 text-lg
 }
 
 .DrawerMenuText {
-  @apply text-white text-lg font-medium hover:text-TMDB-300 border border-x-0 border-t-0 mx-2 py-3 w-auto
+  @apply text-white text-lg font-medium hover:text-white border border-x-0 border-t-0 mx-2 py-3 w-auto
 }

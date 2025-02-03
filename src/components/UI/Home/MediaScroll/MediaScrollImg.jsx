@@ -12,7 +12,7 @@ export default function MediaScrollImg({ ImageUrl, title, id, mediaType }) {
       style={{
         backgroundImage: `url(${ImageUrl})`,
       }}
-      className="flex justify-center items-center posterSize my-1 mr-2 bg-cover relative rounded shadow-normal hover:-translate-y-1 duration-100"
+      className="flex justify-center items-center posterSize my-1 mr-4 bg-cover relative rounded shadow-normal hover:-translate-y-1 duration-100"
       alt={title}
       onClick={() => {handleClick(id)}}
     >

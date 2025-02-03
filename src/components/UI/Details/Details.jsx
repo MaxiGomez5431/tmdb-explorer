@@ -3,9 +3,9 @@ import DetailsCast from "./DetailsCast/DetailsCast"
 import DetailsProductionInfo from "./DetailsProductionInfo"
 import MediaScroll from "../Home/MediaScroll/MediaScroll"
 import { API_ENDPOINTS } from "../../../assets/apiConfig";
-import Gradient from "../../utilities/Gradient";
 import { useParams } from "react-router";
 import { useMediaType } from "../../../context/MediaContext";
+import Footer from "../Footer/Footer";
 
 export default function Details() {
   const { id } = useParams();
@@ -28,11 +28,12 @@ export default function Details() {
 
       <div>
         <DetailsProductionInfo id={id} />
-        <Gradient color={"TMDB-950"} />
       </div>
 
-      <MediaScroll url={recomendationsUrl} title={"Recommendations"} className={"bg-TMDB-800 pt-20 group"} mediaType={mediaType} />
-      <MediaScroll url={similarUrl} title={"Similar"} className={"bg-TMDB-800 group"} mediaType={mediaType} />
+      <MediaScroll url={recomendationsUrl} title={"Recommendations"} className={"bg-TMDB-950 group"} mediaType={mediaType} />
+      <MediaScroll url={similarUrl} title={"Similar"} className={"bg-TMDB-950 group"} mediaType={mediaType} />
+
+      <Footer />
     </>
   );
 }
