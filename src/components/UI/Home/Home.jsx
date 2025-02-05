@@ -22,7 +22,6 @@ function Home() {
       <MediaScrollTop url={API_ENDPOINTS.GET_TOP_RATED_SERIES(1)}  title={"Top 10 Series"}  mediaType={"serie"}/>
 
       <MediaScroll url={API_ENDPOINTS.GET_TOP_RATED_SERIES(2)}  title={"Recomendated Series"}  mediaType={"serie"}/>
-
       <MediaScroll url={API_ENDPOINTS.GET_TOP_RATED_SERIES(3)}  title={"Popular Movies Series"}  mediaType={"serie"}/>
 
       <ImageGrid />

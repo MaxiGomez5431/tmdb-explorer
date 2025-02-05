@@ -1,8 +1,11 @@
 import Genres from "../../../utilities/Genres"
 import Score from "../../../utilities/Score"
 import SeparationSpan from "../../../utilities/SeparationSpan";
+import { useMediaType } from "../../../../context/MediaContext";
+
 
 export default function HeroMovieInfo ({data, children}) {
+  const mediaType = useMediaType()
 
   function formatDate(dateString, locale = "en-US") {
     const date = new Date(dateString);
@@ -38,6 +41,7 @@ export default function HeroMovieInfo ({data, children}) {
         genreIds={data?.genres} 
         className="flex flex-wrap my-3" 
         justify={"justify-start"}
+        mediaType={`${mediaType}s`}
       />
 
       <div className="flex items-center space-x-4">

@@ -55,7 +55,7 @@ html {
 }
 
 .linkStyle {
-  @apply text-white px-4 py-2 hover:text-white hover:underline duration-200 text-lg
+  @apply text-white px-4 py-2 hover:text-TMDB-500 duration-200 text-xl
 }
 
 .DrawerMenuText {
@@ -68,4 +68,22 @@ html {
 
 .verticalBlueTitle {
   @apply text-4xl md:text-5xl lg:text-7xl my-5 font-bold text-TMDB-500 rotate-180 [writing-mode:vertical-rl]
+}
+
+.whiteBtn {
+  @apply flex text-center items-center justify-center space-x-2 bg-white py-2 my-2 rounded text-lg w-40 hover:bg-TMDB-500 hover:text-white duration-100
+}
+
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #ffffff08; /* 3% de opacidad */
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(41, 78, 237, 1); /* Azul con transparencia */
+    border-radius: 4px;
+  }
 }

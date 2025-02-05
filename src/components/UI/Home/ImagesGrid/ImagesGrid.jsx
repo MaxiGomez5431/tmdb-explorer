@@ -7,7 +7,7 @@ export default function ImageGrid() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/movie/839033`);
+    navigate(`/movie/218`);
   };
 
   return (

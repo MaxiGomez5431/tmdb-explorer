@@ -8,8 +8,6 @@ export default function ExploreCatalog({url, page, type}) {
   const [extendableData, setExtendableData] = useState(null)
   const [isFetching, setIsFetching] = useState(false)
   const {data} = useFetch(url(actualPage))
-
-  useReachBottom(() => {addMoreMovies()})
   
   const addMoreMovies = () => {
     setActualPage(actualPage + 1)
@@ -55,8 +53,11 @@ export default function ExploreCatalog({url, page, type}) {
           ))
         }
       </div>
-
-      <i className="fa-solid fa-spinner text-6xl text-white m-10 animate-spin" /> 
+      
+      <button className="whiteBtn !w-full !my-10" onClick={addMoreMovies}>
+        Load more movies
+      </button>
+      
     </div>
   )
 }

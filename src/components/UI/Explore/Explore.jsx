@@ -4,7 +4,7 @@ import {useRef} from "react";
 import MediaScrollBtns from "../Home/MediaScroll/MediaScrollBtns"
 
 export default function Explore({ title, url }) {
-  const { data } = url ? useFetch(url) : { data: null };
+  const { data } =  useFetch(url || "")
   const scrollRef = useRef(null);
 
   return (

@@ -19,8 +19,8 @@ export default function DetailsProductionInfo ({id}) {
         <h1 className={titleStyle}>Production company</h1>
         { 
           data &&
-          data.production_companies.map((company) => (
-            <p className={textStyle}>{company.name}</p>
+          data.production_companies.map((company, index) => (
+            <p key={index} className={textStyle}>{company.name}</p>
           ))
         }
       </div>
@@ -29,8 +29,8 @@ export default function DetailsProductionInfo ({id}) {
         <h1 className={titleStyle}>Production countries</h1>
         { 
           data &&
-          data.production_countries.map((country) => (
-            <p className={textStyle}>{country.name}</p>
+          data.production_countries.map((country, index) => (
+            <p key={index} className={textStyle}>{country.name}</p>
           ))
         }
       </div>
