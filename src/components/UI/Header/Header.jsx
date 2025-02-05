@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import useMobile from "../../../hooks/useMobile"
 import { Link } from "react-router";
+import { API_ENDPOINTS } from "../../../assets/apiConfig";
 import TmdbLogo from "../../../assets/TMDBLogo.png";
 import NavBar from "./NavBar";
 import DrawerMenu from "./DrawerMenu/DrawerMenu";
 import useFetch from "../../../hooks/useFetch";
-import { API_ENDPOINTS } from "../../../assets/apiConfig";
 import SearchBar from "./SearchBar";
 
 export default function Header() {
@@ -33,9 +33,9 @@ export default function Header() {
       }`}
     >
       {/* Logo */}
-      <div className="flex-none">
+      <Link to="/" className="flex-none">
         <img src={TmdbLogo} alt="TMDB Logo" className="w-40 my-4" />
-      </div>
+      </Link>
 
       { !isMobile ?
         <>

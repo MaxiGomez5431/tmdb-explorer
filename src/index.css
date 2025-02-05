@@ -61,3 +61,11 @@ html {
 .DrawerMenuText {
   @apply text-white text-lg font-medium hover:text-white border border-x-0 border-t-0 mx-2 py-3 w-auto
 }
+
+.blueTitle {
+  @apply text-6xl md:text-8xl my-5 font-semibold text-TMDB-500 containerPadding
+}
+
+.verticalBlueTitle {
+  @apply text-4xl md:text-5xl lg:text-7xl my-5 font-bold text-TMDB-500 rotate-180 [writing-mode:vertical-rl]
+}
