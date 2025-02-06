@@ -1,5 +1,5 @@
 import ExploreCatalog from "./ExploreCatalog";
-import Explore from "./Explore";
+import Explore from "./ExploreGenres";
 import { useParams } from "react-router";
 
 export default function ExploreSearch({url}) {

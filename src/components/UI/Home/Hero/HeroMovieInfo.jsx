@@ -26,7 +26,7 @@ export default function HeroMovieInfo ({data, selectedMovie, children}) {
 
         to={`/movie/${data?.results[selectedMovie].id}`}
       >
-        <i class="fa-solid fa-circle-info"/>
+        <i className="fa-solid fa-circle-info"/>
         <p>See more info</p>
       </Link>
   </div>

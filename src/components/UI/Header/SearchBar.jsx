@@ -12,7 +12,7 @@ export default function SearchBar() {
   };
   
   return (
-    <div className="flex items-center bg-white backdrop-blur-md rounded-full px-4 py-2 my-2 max-w-44 md:max-w-72 shadow-md">
+    <div className="flex items-center bg-white backdrop-blur-md rounded px-4 py-2 my-2 mx-4 shadow-md max-w-[220px]">
       {/* Ícono de búsqueda */}
       <i 
         className="fa-solid fa-magnifying-glass text-TMDB-950 text-lg mr-2 cursor-pointer"
@@ -25,7 +25,7 @@ export default function SearchBar() {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="Search..."
-        className="flex-1 bg-transparent placeholder-gray-600 outline-none w-[100px] sm:w-[150px]"
+        className="flex-1 bg-transparent placeholder-gray-600 outline-none "
         onKeyDown={(e) => e.key === "Enter" && handleSearch()} // Ejecuta la búsqueda al presionar Enter
       />
     </div>

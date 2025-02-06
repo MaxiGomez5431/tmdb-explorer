@@ -30,6 +30,9 @@ export default function HeroMovieInfo ({data, children}) {
     return timeString || null;
   }
   
+  function formatSeasons(seasonsLength) {
+    return seasonsLength === 1 ? "1 Season" : `${seasonsLength} Seasons`;
+  }
 
   return (
     <div className="flex flex-col text-left max-w-full sm:max-w-[40%] space-y-2">
@@ -45,9 +48,18 @@ export default function HeroMovieInfo ({data, children}) {
       />
 
       <div className="flex items-center space-x-4">
-        <p className="text-lg text-gray-400 ">{formatDate(data.release_date || data.first_air_date || "No Release Date Info")}</p>   
-        <SeparationSpan />
-        <p className="text-lg text-gray-400 ">{formatTime(data.runtime) || `${data.seasons.length} Seasons`}</p>   
+        <p className="text-lg text-gray-400 ">{formatDate(data.release_date || data.first_air_date || "No Release Date Info")}</p> 
+        {
+          (data.runtime || data.seasons) && (
+            <>
+              <SeparationSpan />
+              <p className="text-lg text-gray-400">
+                {data.runtime ? formatTime(data.runtime) : `${formatSeasons(data.seasons.length)}`}
+              </p>
+            </>
+          )
+        }
+        
       </div>
 
       <div className="flex items-center space-x-2">
@@ -58,11 +70,15 @@ export default function HeroMovieInfo ({data, children}) {
         <p className="text-white text-lg font-semibold">{`/`}</p>
         <p className="text-white text-lg font-semibold">{data?.vote_average}</p>
       </div>
+      
+      {
+        data?.overview &&
+        <div className="!mt-5">
+          <h1 className="text-xl text-white font-semibold">{data.tagline || "Synopsis"}</h1>
+          <p className="text-md text-white">{data.overview}</p>
+        </div>
+      }
 
-      <div className="!mt-5">
-        <h1 className="text-xl text-white font-semibold">{data.tagline || "Synopsis"}</h1>
-        <p className="text-md text-white">{data.overview}</p>
-      </div>
 
       {children}
       

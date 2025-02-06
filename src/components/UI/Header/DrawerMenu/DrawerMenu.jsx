@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router"; // Suponiendo que usas React Router
-
 import SearchBar from "../SearchBar";
 
 export default function DrawerMenu({ data }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isGenresOpen, setIsGenresOpen] = useState(false);
+  const menuRef = useRef(null); // Referencia al menú
+
+  // Detectar clics fuera del menú para cerrarlo
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
 
   return (
     <>
@@ -16,7 +33,8 @@ export default function DrawerMenu({ data }) {
 
       {/* Menú deslizante */}
       <div
-        className={`fixed top-0 right-0 h-screen w-auto bg-TMDB-900 flex flex-col justify-start items-end 
+        ref={menuRef}
+        className={`fixed top-0 right-0 h-screen w-2/3 md:w-1/2 bg-TMDB-900 flex flex-col justify-start items-end 
           transform transition-transform duration-300 shadow-xl 
           overflow-y-auto
           ${
@@ -36,7 +54,7 @@ export default function DrawerMenu({ data }) {
 
           <SearchBar />
 
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
 
             <Link
               to="/"

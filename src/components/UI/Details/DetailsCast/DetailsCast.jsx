@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useRef } from "react"
 import { API_ENDPOINTS } from "../../../../assets/apiConfig"
 import useFetch from "../../../../hooks/useFetch"
 import MediaScrollBtns from "../../Home/MediaScroll/MediaScrollBtns"
@@ -10,10 +10,6 @@ export default function DetailsCast ({id}) {
   let mediaUrl = mediaType === "movie" ? API_ENDPOINTS.GET_MOVIE_CREDITS : API_ENDPOINTS.GET_SERIE_CREDITS
   const {data} = useFetch(mediaUrl(id))
   const scrollRef = useRef(null);
-
-  useEffect(() => {
-    console.log(data)
-  },[data])
 
   return (
     
@@ -27,9 +23,9 @@ export default function DetailsCast ({id}) {
           className="flex items-center flex-row overflow-x-scroll overflow-y-visible mediaScrollBar w-full h-[300px] containerPadding "
           ref={scrollRef}
         >
-          {data?.cast.map((actor) => (
+          {data?.cast.map((actor, index) => (
             <DetailsCastImg
-              key={actor.cast_id}
+              key={index}
               ImageUrl={actor.profile_path}
               name={actor.name}
               characterName={actor.character}

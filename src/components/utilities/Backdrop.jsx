@@ -10,7 +10,7 @@ export default function Backdrop({ ImageUrl, title, id, mediaType}) {
 
   return (
     <div
-      className={`flex justify-center items-center aspectBackdrop relative hover:-translate-y-1 duration-100`}
+      className={`flex justify-center items-center aspectBackdrop relative hover:-translate-y-1 duration-100 cursor-pointer`}
       alt={title}
       onClick={() => {handleClick(id)}}
     >
@@ -19,6 +19,7 @@ export default function Backdrop({ ImageUrl, title, id, mediaType}) {
         src={`${API_ENDPOINTS.IMAGE_BACKDROP_SMALL}${ImageUrl}`}
         alt={`Backdrop image of ${title} id: ${id}`}
         className="w-full h-auto rounded-lg shadow-normal"
+        loading="lazy"
       />
 
       <div className="absolute w-full h-full flex flex-col justify-end items-left rounded-lg bg-black/20 p-3">
