@@ -40,7 +40,7 @@ echo "VITE_TMDB_API_KEY=your_api_key_here" > .env
 npm run dev
 ```
 
-##🔑 API Key Setup
+## 🔑 API Key Setup
 - Create account at TMDB
 - Request API key from Developer Dashboard
 - Replace your_api_key_here in .env file
