@@ -14,7 +14,6 @@ export default function MediaScroll({ url, title, id, mediaType, ...props}) {
       let curatedData = data.results.filter((movie) => movie.backdrop_path && movie.poster_path )
       curatedData = curatedData.length === 0 ? null : curatedData
       setUsableData(curatedData)
-      console.log(usableData)
     }
   },[data])
   

@@ -12,34 +12,30 @@ export default function DetailsCast ({id}) {
   const scrollRef = useRef(null);
 
   return (
-    
-    <section className="relative bg-TMDB-950 h-auto w-full group flex flex-col justify-between items-left ">
-
-      <h1 className="text-white text-3xl py-2 containerPadding">Cast</h1>
-
-      <div className="flex flex-col justify-center items-center w-full ">
-        
-        <div
-          className="flex items-center flex-row overflow-x-scroll overflow-y-visible mediaScrollBar w-full h-[300px] containerPadding "
-          ref={scrollRef}
-        >
-          {data?.cast.map((actor, index) => (
-            <DetailsCastImg
-              key={index}
-              ImageUrl={actor.profile_path}
-              name={actor.name}
-              characterName={actor.character}
-              alt={actor.name}
-            />
-          ))}
-          
+    data?.cast?.length > 0 && (
+      <section className="relative bg-TMDB-950 h-auto w-full group flex flex-col justify-between items-left">
+        <h1 className="text-white text-3xl py-2 containerPadding">Cast</h1>
+  
+        <div className="flex flex-col justify-center items-center w-full">
+          <div
+            className="flex items-center flex-row overflow-x-scroll overflow-y-visible mediaScrollBar w-full h-[300px] containerPadding"
+            ref={scrollRef}
+          >
+            {data?.cast.map((actor, index) => (
+              <DetailsCastImg
+                key={index}
+                ImageUrl={actor.profile_path}
+                name={actor.name}
+                characterName={actor.character}
+                alt={actor.name}
+              />
+            ))}
+          </div>
+  
+          <MediaScrollBtns scrollRef={scrollRef} />
         </div>
-        
-        <MediaScrollBtns scrollRef={scrollRef} />
-
-      </div>
-
-    </section>
-
-  )
+      </section>
+    )
+  );
+  
 }

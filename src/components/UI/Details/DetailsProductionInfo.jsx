@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { API_ENDPOINTS } from "../../../assets/apiConfig";
 import { useMediaType } from "../../../context/MediaContext";
 import useFetch from "../../../hooks/useFetch";
@@ -11,10 +10,6 @@ export default function DetailsProductionInfo ({id}) {
 
   const titleStyle = "text-neutral-400 text-2xl py-1"
   const textStyle = "text-white text-xl font-light py-1"
-
-  useEffect(() => {
-    console.log(data)
-  }, [data])
 
   return (
 

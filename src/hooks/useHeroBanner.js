@@ -23,12 +23,6 @@ function useHeroBanner({data}) {
     );
   };
 
-  useEffect(() => {
-    if (data) {
-      console.log(data);
-    }
-  }, [data]);
-
   //se puede poner en otro hook para simplificar este, no sirve si puedo saltar de una pelicula a otra, necesito poner que se carguen todas las imagenes
 
   useEffect(() => {
